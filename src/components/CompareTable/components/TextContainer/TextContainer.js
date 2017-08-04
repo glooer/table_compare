@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 
 export default class TextContainer extends Component {
-	render() {
+	getUnsafeHTML(params = {}) {
 		return (
-			<div>
-				{ this.props.data.text }
-			</div>
-		)
+			<div className={ params.className } dangerouslySetInnerHTML={
+				params
+			 }></div>
+		);
+	}
+
+	render() {
+		return this.getUnsafeHTML({
+			__html: this.props.data.text,
+			className: this.props.data.className
+		})
 	}
 }

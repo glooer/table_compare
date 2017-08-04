@@ -13,9 +13,122 @@ body {
 	vertical-align: top;
 }
 
-.compare-table td {
+.compare-table th {
+	vertical-align: middle;
+}
+
+.compare-table td, th {
 	padding: 1rem;
 	border: 1px solid #ebebeb;
+}
+
+.compare-table thead {
+	background-color: white;
+}
+
+.head-office__container {
+  text-align: left;
+}
+
+.head-office__container.proffessional {
+	border-top: 4px solid #00bddf;
+	color: #00bddf
+}
+
+.head-office__container.cloud {
+	border-top: 4px solid #a46bf1;
+	color: #a46bf1
+}
+
+.head-office__container.default {
+	border-top: 4px solid #425ded;
+	color: #425ded
+}
+
+.head-office__container.education {
+	border-top: 4px solid #00b376;
+	color: #00b376
+}
+
+.head-office__container.mail {
+	border-top: 4px solid rgb(249, 159, 1);
+	color: rgb(249, 159, 1);
+}
+
+.head-office__title {
+	text-align: left;
+	font-weight: normal;
+}
+
+.head-office__offer {
+	margin: 0 auto auto auto;
+	padding: 12px 20px 10px;
+	border: 2px solid #00bddf;
+	text-transform: uppercase;
+	color: #00bddf;
+	font-size: 14px;
+	border-radius: 4px;
+	display: inline-block;
+	font-weight: bold;
+	text-decoration: none;
+	/* font-family: 'open_sanslight'; */
+	margin-top: 1rem;
+}
+
+.head-office__offer:hover {
+	background-color: #00bddf;
+	color: white;
+}
+
+
+.head-office__offer.proffessional {
+	border: 2px solid #00bddf;
+	color: #00bddf;
+}
+
+.head-office__offer.proffessional:hover {
+	background-color: #00bddf;
+	color: white;
+}
+
+.head-office__offer.cloud {
+	border: 2px solid #a46bf1;
+	color: #a46bf1;
+}
+
+.head-office__offer.cloud:hover {
+	background-color: #a46bf1;
+	color: white;
+}
+
+.head-office__offer.default {
+	border: 2px solid #425ded;
+	color: #425ded;
+}
+
+.head-office__offer.default:hover {
+	background-color: #425ded;
+	color: white;
+}
+
+.head-office__offer.education {
+	border: 2px solid #00b376;
+	color: #00b376;
+}
+
+.head-office__offer.education:hover {
+	background-color: #00b376;
+	color: white;
+}
+
+.head-office__offer.mail {
+	border: 2px solid rgb(249, 159, 1);
+	color: rgb(249, 159, 1);
+}
+
+.head-office__offer.mail:hover {
+	background-color: rgb(249, 159, 1);
+	color: white;
 }
 
 .compare-table__app {

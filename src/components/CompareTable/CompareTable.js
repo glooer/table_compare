@@ -1,11 +1,26 @@
 import React from 'react';
-import CompareTableDefaultState from './defaultState'
+// import CompareTableDefaultState from './defaultState'
 import ComponentList from './ComponentList'
+import $ from 'jquery';
 
 export default class CompareTable extends React.Component {
 
+	constructor(props) {
+		super(props)
+
+		this.state.data = this.props.data
+	}
+
+	componentDidMount() {
+		$.get(this.props.source, function(result) {
+			this.setState({
+				data: result
+			})
+		}.bind(this))
+	}
+
 	state = {
-		data: CompareTableDefaultState
+		data: {}
 	}
 
 	renderComponent(component_name, params) {
@@ -52,7 +67,8 @@ export default class CompareTable extends React.Component {
 	renderTR(element, is_header = false) {
 		return (
 			<tr>
-				{ element.map(value => {
+				{ element.map((value, i) => {
+					
 					return this.renderTD({
 						class_name: value.tdClass || null,
 						colspan: value.colspan || null,
@@ -67,28 +83,16 @@ export default class CompareTable extends React.Component {
 	render() {
 		return (
 			<div>
-				<table className="compare-table">
-					<tbody>
+				<table id={ this.props.id } className="compare-table">
+					<thead>
 						{ this.renderTR(this.state.data.header, true) }
+					</thead>
+					<tbody>
 						{ this.state.data.body.map(value => {
 							return this.renderTR(value)
 						}) }
 					</tbody>
 				</table>
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
 			</div>
 
 		)
