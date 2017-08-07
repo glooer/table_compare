@@ -25,7 +25,8 @@
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root" data-source="http://localhost:3000/data.json"></div>
+		<!-- <div data-type="table-compare" id="root" data-source="/local/templates/olof_new/assets/dump/compare/data.json" data-col-hide="5"></div> -->
+    <div data-type="table-compare" data-source="http://localhost:3000/data.json" data-col-sort="0,5,3,1" data-col-hide="2,4"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -37,11 +38,5 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(() => {
-				$('#compare-talbe__beaty').stickyTableHeaders()
-			})
-
-		</script>
   </body>
 </html>

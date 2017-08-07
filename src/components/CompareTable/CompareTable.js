@@ -5,11 +5,12 @@ import $ from 'jquery';
 
 export default class CompareTable extends React.Component {
 
-	constructor(props) {
-		super(props)
-
-		this.state.data = this.props.data
-	}
+	// constructor(props) {
+	// 	super(props)
+	//
+	// 	// this.state.data = this.props.data;
+	// 	// this.setState({data: this.props.data})
+	// }
 
 	componentDidMount() {
 		$.get(this.props.source, function(result) {
@@ -20,7 +21,10 @@ export default class CompareTable extends React.Component {
 	}
 
 	state = {
-		data: {}
+		data: {
+			header: [],
+			body: []
+		}
 	}
 
 	renderComponent(component_name, params) {
@@ -64,11 +68,26 @@ export default class CompareTable extends React.Component {
 		)
 	}
 
+	sortByArray(arr, sort) {
+		return sort.map(v => arr[v]).filter(v => !!v);
+	}
+
 	renderTR(element, is_header = false) {
+		let sort_col = this.props.sort_col.concat(Object.keys(element)).map(Number).filter((val, i, arr) => arr.indexOf(val) === i);
+
+		// ещё удалим лишние идшники
+		sort_col = sort_col.filter((v) => {
+			return !this.props.hide_col.map(Number).includes(v)
+		})
+
+		element = this.sortByArray(element, sort_col)
 		return (
 			<tr>
 				{ element.map((value, i) => {
-					
+					// if (this.props.hide_col.includes(i)) {
+					// 	return null;
+					// }
+
 					return this.renderTD({
 						class_name: value.tdClass || null,
 						colspan: value.colspan || null,

@@ -16,7 +16,7 @@ export default class TextWithTooltip extends Component {
 					<div className="icon">
 						{ this.props.data.tooltip ? this.getUnsafeHTML({
 							__html: this.props.data.tooltip,
-							className: 'tooltip'
+							className: 'compare-table__tooltip'
 						}) : '' }
 					</div>
 			</div>

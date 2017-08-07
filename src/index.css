@@ -221,7 +221,7 @@ body {
 	display: block;
 }
 
-.compare-table__os_icon > .icon > .tooltip {
+.compare-table__os_icon > .icon > .compare-table__tooltip {
 	position: absolute;
   display: none;
   background: #00aaf1;
@@ -236,7 +236,7 @@ body {
   line-height: 18px;
 }
 
-.compare-table__os_icon > .icon:hover > .tooltip {
+.compare-table__os_icon > .icon:hover > .compare-table__tooltip {
 	display: block;
 }
 
